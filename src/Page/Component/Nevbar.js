@@ -1,11 +1,25 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 export default function Nevbar() {
   return (
+
+
+    <>
+
+
+
     <div>
   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div className="container">
-      <a className="navbar-brand" href="/"><b>My Cart</b></a>
+  
+      <Link className="navbar-brand" to="/">    
+      <div>
+        <img width="75" src="/img/logo.png" alt="Flipkart" title="Flipkart"/><br/>
+       <i style={{fontSize: 'small'}}>Explore Plus <sup><img width={10} src="/img/sub-logo.png" alt="Flipkart" title="Flipkart" /></sup></i>
+      </div>
+
+      </Link>
       <div className="collapse navbar-collapse" id="main_nav">
         <input type="text" style={{width: '60%'}} className="form-control search-bar" placeholder="Search for products, brands and more" aria-label="Recipient's username" aria-describedby="basic-addon2" />
         <div className="input-group-append">
@@ -71,6 +85,6 @@ export default function Nevbar() {
 </div>
   </div>
 
-
+  </>
   )
 }

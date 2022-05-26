@@ -18,14 +18,15 @@ export default function Productlist(props) {
 
       .then((data) => {
         setproduct(data)
-        setLoading(false);
+          setLoading(false);
       })
   }
 
     useEffect(() => {
       fetchData();
-     
+    
     }, [])
+
 
     const options = {
       margin: 30,
@@ -56,11 +57,11 @@ export default function Productlist(props) {
 
     return (
       <>
-        <div className='container-5 p-2' style={{backgroundColor: 'white'}}>
-          <div className='row mt-2'>
-            <div className='col-md-10 col-sm-12'>
+        <div className='container-5 mt-5' style={{backgroundColor: 'white'}}>
+          <div className='row mt-3'>
+            
             <div className='col-12'>
-                <div class="d-flex">
+                <div class="d-flex mt-4">
                   <div class="p-2"><h4>{props.title}</h4></div>
                   <div class="ms-auto p-2"><button type="button" className="btn btn-primary btn-lg">View</button></div>
                 </div>
@@ -76,12 +77,7 @@ export default function Productlist(props) {
                   )}
                 </OwlCarousel>
               </div>
-            </div>
-            <div className='col-md-2 col-sm-12'>
-              <div className='row '>
-                <img src= {props.bannerurl} class="card-img-top" alt="..." />
-              </div>
-            </div>
+            
           </div>
         </div>
       </>
