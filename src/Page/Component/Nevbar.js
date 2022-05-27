@@ -3,20 +3,15 @@ import { Link } from "react-router-dom";
 
 export default function Nevbar() {
   return (
-
-
     <>
-
-
-
-    <div>
-  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    
+  <nav className="navbar navbar-expand-lg navbar-dark bg-primary" id="pc-nevbar">
     <div className="container">
   
       <Link className="navbar-brand" to="/">    
       <div>
-        <img width="75" src="/img/logo.png" alt="Flipkart" title="Flipkart"/><br/>
-       <i style={{fontSize: 'small'}}>Explore Plus <sup><img width={10} src="/img/sub-logo.png" alt="Flipkart" title="Flipkart" /></sup></i>
+          <img width="75" src="/img/logo.png" alt="Flipkart" title="Flipkart"/><br/>
+          <i style={{fontSize: 'small'}}>Explore Plus <sup><img width={10} src="/img/sub-logo.png" alt="Flipkart" title="Flipkart" /></sup></i>
       </div>
 
       </Link>
@@ -41,28 +36,28 @@ export default function Nevbar() {
               <li><a className="dropdown-item" href="/"> Gift Cards </a></li>
             </ul>
           </li>
-          <li className="nav-item"><a className="nav-link" href="/">  Become a Seller </a></li>
-          <li className="nav-item"><a className="nav-link" href="/">More </a></li>
-          <li className="nav-item"><a className="nav-link" href="/"><i class="bi bi-cart-fill"></i> Cart </a></li>
+          <li className="nav-item"><a className="nav-link" href="/" style={{color:'white'}}>Become a Seller </a></li>
+          <li className="nav-item"><a className="nav-link" href="/" style={{color:'white'}}>More </a></li>
+          <li className="nav-item"><Link className="nav-link" to="/Cart" style={{color:'white'}}><i class="bi bi-cart-fill"></i> Cart </Link></li>
         </ul>
       </div> 
     </div> 
   </nav>
 
-<nav className="navbar navbar-expand-lg bg-primary mobile-nevbar">
-  <div className="container">
-  <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-info moblie-search-btn"  type="submit">Search</button>
-      </form>
-    <button className="navbar-toggler"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"   aria-expanded="false" aria-label="Toggle navigation">
-    <i class="bi bi-list"></i>
-    </button>
-    
-  </div>
-</nav>
+  {/* <nav className=" bg-primary" id="mobile-nevbar">
+  <div class="row pt-3 ">
+    <div class="col-1">   
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          <i class="bi bi-list" style={{color: 'white'}}></i>
+</a>
+      </div>
+    <div class="col-6 px-4"> <img width="75" src="/img/logo.png" alt="Flipkart" title="Flipkart"/><br/>
+          <i style={{fontSize: 'small',color: 'white'}} >Explore Plus <sup><img width={10} src="/img/sub-logo.png" alt="Flipkart" title="Flipkart" /></sup></i></div>
+    <div class="col-3 p-0 "><a className="" href="/" style={{color:'white',textDecoration:'none'}}><i class="bi bi-cart-fill"></i> Cart  <sup style={{backgroundColor:'red',color:'white',borderRadius:'15px',borderColor:'white'}}>41</sup> </a></div>
+    <div class="col-2 p-0 "><a className="" href="/" style={{color:'white',textDecoration:'none'}}>Login </a> </div>
+  </div>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -83,7 +78,8 @@ export default function Nevbar() {
     </div>
   </div>
 </div>
-  </div>
+   
+  </nav> */}
 
   </>
   )

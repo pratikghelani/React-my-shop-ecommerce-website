@@ -49,7 +49,7 @@ export default function Productlist(props) {
           items: 3,
       },
       1000: {
-          items: 6,
+          items: 5,
       }
       },
   };

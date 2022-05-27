@@ -16,7 +16,7 @@ export default function () {
 
   return (
         <>
-            <div className='container-5 mt-3'>
+            <div className='container-5 mt-3' id='slider'>
                 <OwlCarousel className='owl-theme' {...options} items={1}  >
                     <div class='item'>
                     <img class="d-block w-100" src="./img/bannner1.jpeg" alt="First slide"/>
@@ -26,6 +26,23 @@ export default function () {
                     </div>
                 </OwlCarousel>
             </div>
+
+            {/* <div className='container-5 mt-3' id='slider'>
+                <OwlCarousel className='owl-theme'  items={1}  dots={true} loop={true}  >
+                    <div class='item'>
+                        <img class="d-block w-100" src="./img/m-slide-1.jpg" alt="First slide"/>
+                    </div>
+                    <div class='item'>
+                        <img class="d-block w-100" src="./img/m-slide-2.jpeg" alt="sec slide"/>
+                    </div>
+                    <div class='item'>
+                        <img class="d-block w-100" src="./img/m-slide-3.jpg" alt="First slide"/>
+                    </div>
+                    <div class='item'>
+                        <img class="d-block w-100" src="./img/m-slide-4.jpeg" alt="sec slide"/>
+                    </div>
+                </OwlCarousel>
+            </div> */}
         </>
   )
 }
