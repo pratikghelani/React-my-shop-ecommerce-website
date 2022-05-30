@@ -6,7 +6,7 @@ export default function Cart() {
     const [loading, setLoading] = useState(true)
     const fetchData = () => {
         fetch(
-          `https://fakestoreapi.com/products?limit=20`,
+          `https://fakestoreapi.com/products?limit=3`,
         )
           .then((response) => {
             return response.json()
@@ -42,6 +42,17 @@ export default function Cart() {
                             <div className="row g-0">
                                 <div className="col-md-2">
                                 <img src={data.image}  className="img-fluid rounded-start" alt="..."  id='cart-item'/>
+                                  
+                                <div className="row g-0 p-3">
+                                    <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style={{justifyContent: 'center'}}>
+                                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                                <button type="button" class="btn plue-btn btn-primary">-</button>
+                                                <button type="button" class="btn count-btn btn-outline-light"><b>1</b></button> 
+                                                <button type="button" class="btn minus-btn btn-primary">+</button>
+                                            </div>
+                                    </div>
+                                </div>
+
                                 </div>
                                 <div className="col-md-7">
                                     <div className="card-body">
@@ -49,8 +60,10 @@ export default function Cart() {
                                         <p className="card-text">{data.description}</p> 
                                         <p className="card-text"><small className="text-muted"><b>Category:</b>Whole9Yards</small></p>
                                     </div>
-                                    <div className="row g-0 p-3">
-                                        {/* <div className="col-md-2"> <del> <h5>   </h5></del></div> */}
+                                
+                              
+
+                                  <div className="row g-0 p-3">
                                         <div className="col-md-4"> <h2>  ₹{data.price}<sup><del>₹{data.price*2}</del></sup> </h2></div>
                                         <div className="col-md-2 text-success"> <h4>  50% OFF </h4></div>
                                         <div className="col-md-6 text-success"> <h6>  1 coupon & 1 offer applied </h6></div>

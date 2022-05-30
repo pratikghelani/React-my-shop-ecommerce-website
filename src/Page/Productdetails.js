@@ -80,23 +80,20 @@ export default function Productdetails() {
                </button> </div> 
           </div> 
 
-
-
-
             <p className='mt-2'>{product.description}</p>
             <div>
-                        <h5 className='text-success'> Available offers</h5>
-                        <ul>
-                            <li>Bank Offer10% off on ICICI Bank Credit Cards, up to ₹500. On orders of ₹5000 and above.</li>
-                            <li>Bank Offer10% Instant Discount on RBL Bank Credit and Debit Cards.</li>
-                            <li>Bank Offer10% instant discount on OneCard Credit Cards, up to ₹1500. On orders of ₹3000 and above.</li>
-                            <li>Combo OfferBuy 3 items save 5%;Buy 4 save 7%;Buy 5+ save 10%See all products.</li>
-                            <li>Special PriceExtra ₹180 off(price inclusive of discount).</li>
-                            <li>FreebieUser will get free 3 Months Gaana Plus. Gaana Plus enables the user to - get an ad-free experience.</li>
-                            <li>Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card worth ₹100*Know .</li>
-                            <li>Bank Offer5% Cashback on Flipkart Axis Bank Card.</li>
-                        </ul>
-                    </div>
+                   <h5 className='text-success'> Available offers</h5>
+                  <ul>
+                          <li>Bank Offer10% off on ICICI Bank Credit Cards, up to ₹500. On orders of ₹5000 and above.</li>
+                          <li>Bank Offer10% Instant Discount on RBL Bank Credit and Debit Cards.</li>
+                          <li>Bank Offer10% instant discount on OneCard Credit Cards, up to ₹1500. On orders of ₹3000 and above.</li>
+                          <li>Combo OfferBuy 3 items save 5%;Buy 4 save 7%;Buy 5+ save 10%See all products.</li>
+                          <li>Special PriceExtra ₹180 off(price inclusive of discount).</li>
+                          <li>FreebieUser will get free 3 Months Gaana Plus. Gaana Plus enables the user to - get an ad-free experience.</li>
+                          <li>Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card worth ₹100*Know .</li>
+                          <li>Bank Offer5% Cashback on Flipkart Axis Bank Card.</li>
+                      </ul>
+                  </div>
           
             <hr />
             <p>{product.description}{product.description}{product.description}{product.description}{product.description}</p>
@@ -105,7 +102,7 @@ export default function Productdetails() {
         </main> 
       </div>    
 
-          <Productlist2 title="Trending Offers"/>
+          <Productlist2 title="Trending Offers" items="5"/>
       
     </div>
 

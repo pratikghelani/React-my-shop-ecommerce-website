@@ -48,8 +48,11 @@ export default function Productlist(props) {
       700: {
           items: 3,
       },
-      1000: {
-          items: 5,
+      1200: {
+        items: 4,
+      },
+      1400: {
+        items: props.items,
       }
       },
   };

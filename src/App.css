@@ -35,12 +35,19 @@
   }
 }
 
-
+.bi-cart-check-fill::before {
+  color: white;
+}
 .search-btn,
 .search-bar {
   border-radius: 0px;
   background-color: white;
   border-color: white;
+}
+
+.search-bar{
+  width: 60px;
+  height: 45px;
 }
 
 .login-btn {
@@ -94,12 +101,11 @@
   position: absolute !important;
   margin-left: 0%;
   z-index: 2 !important;
-
 }
 
 .next-btn {
   position: absolute !important;
-  right: -2%;
+  right: -2.1%;
   margin-right: 43px;
   z-index: 2 !important;
 }
@@ -113,8 +119,8 @@
 }
 
 .link-tag {
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
 }
 
 .link-tag:hover {
@@ -139,7 +145,6 @@
   align-self: flex-start;
  }
 
-
  .place-order-btn{
    background-color: orangered;
    color: #fff;
@@ -152,52 +157,70 @@
 
  .sebmenu{
    background-color: #fff;
-   box-shadow: 0px 0px 10px;
+   box-shadow: 0px 0px 5px;
  }
 
  .submenu-icon{
   width: 50%;
  }
-/* #mobile-nevbar{
-  display:none;
+
+ .plue-btn,.minus-btn{
+   background-color: orangered;
+   border: none;
+ }
+
+ .count-btn{
+   border: none;
+   color: black;
+ }
+
+ .login-item{
+   padding-top: 5px;
+   padding-bottom: 5px;
+ }
+
+ .login-item:hover{
+   background-color: #ddd ;
+ }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-#pc-nevbar{
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
   display: none;
-} */
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 3;
+}
 
-/* 
-@media (min-width: 576px) { 
-  #mobile-nevbar{
-    display:block !important;
-  }
-  
-  #pc-nevbar{
-    display: none !important;
-  }
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 
- } */
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
 
-
-/* 
-@media (min-width: 576px) { 
-  #mobile-nevbar{
-    display:block !important;
-  }
-  
-  #pc-nevbar{
-    display: none !important;
-  }
-
- } */
-/* 
-@media (min-width: 768px) { 
-  .mobile-nevbar{
-    display:none !important;
-  }
-
-  .pc-nevbar{
-    display: block !important;
-  }
-
- }  */
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+.{
+  position: relative;
+    background: red;
+    /* border-radius: 10px; */
+    padding: 5px;
+    right: 18px;
+    height: 15px;
+    border: 1px solid white;
+    border-radius: 34px;
+    font-size: large;
+    padding: 6px;
+}

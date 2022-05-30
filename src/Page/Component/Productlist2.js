@@ -49,8 +49,11 @@ export default function Productlist(props) {
       700: {
           items: 3,
       },
-      1000: {
-          items: 6,
+      1200: {
+        items: 4,
+    },
+      1400: {
+          items: props.items,
       }
       },
   };
@@ -74,7 +77,8 @@ export default function Productlist(props) {
                       <div class='item'>
                        <Product title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
                       </div>
-                  )}
+                  )
+                  }
                 </OwlCarousel>
               </div>
             
