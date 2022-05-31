@@ -18,67 +18,76 @@ export default function Submenu() {
           <div class="row pt-3 pb-3">
               <div class="col-4">   
                 <div class="row">
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/8.PNG' />
                     </div>
-                    <div><b>Top Offers</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Top Offers</b></div>
                     </div>
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/2.PNG' />
                     </div>
-                    <div><b>Grocery</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Grocery</b></div>
                     </div>
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/3.PNG' />
                     </div>
-                    <div><b>Mobiles</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Mobiles</b></div>
                     </div>
                 </div>
               </div>
               <div class="col-4">   
                 <div class="row">
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/4.PNG' />
                     </div>
-                    <div><b>Fashion</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Fashion</b></div>
                     </div>
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/5.PNG' />
                     </div>
-                    <div><b>Electronics</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Electronics</b></div>
                     </div>
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/6.jpg' />
                     </div>
-                    <div><b>Home</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Home</b></div>
                     </div>
                 </div>
               </div>
               <div class="col-4">   
                 <div class="row">
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/7.PNG' />
                     </div>
-                    <div><b>Application</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Application</b></div>
                     </div>
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/8.PNG' />
                     </div>
-                    <div><b>Travel</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Travel</b></div>
                     </div>
-                  <div class="col-4"> 
+                  <div class="col-4 text-center"> 
                     <div>
                       <img className='submenu-icon' src='/img/9.PNG' />
                     </div>
-                    <div><b>Beauty, Toy & More</b></div>
+                    <div className="mt-1 submenu-tag">
+                      <b>Beauty, Toy & More</b></div>
                     </div>
                 </div>
               </div>

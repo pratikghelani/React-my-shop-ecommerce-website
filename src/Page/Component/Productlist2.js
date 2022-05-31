@@ -2,30 +2,34 @@
 import Product from './Product'
 import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
+import { useSelector } from 'react-redux'
 import OwlCarousel from 'react-owl-carousel';
 import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
 import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
 export default function Productlist(props) {
-  const [product, setproduct] = useState([]);
-  const [loading, setLoading] = useState(true)
-  const fetchData = () => {
-    fetch(
-      `https://fakestoreapi.com/products`,
-    )
-      .then((response) => {
-        return response.json()
-      })
 
-      .then((data) => {
-        setproduct(data)
-          setLoading(false);
-      })
-  }
+  const productslist = useSelector(state => state.ProductReducers)
 
-    useEffect(() => {
-      fetchData();
+  // const [product, setproduct] = useState([]);
+  // const [loading, setLoading] = useState(true)
+  // const fetchData = () => {
+  //   fetch(
+  //     `https://fakestoreapi.com/products`,
+  //   )
+  //     .then((response) => {
+  //       return response.json()
+  //     })
+
+  //     .then((data) => {
+  //       setproduct(data)
+  //         setLoading(false);
+  //     })
+  // }
+
+  //   useEffect(() => {
+  //     fetchData();
     
-    }, [])
+  //   }, [])
 
 
     const options = {
@@ -51,7 +55,7 @@ export default function Productlist(props) {
       },
       1200: {
         items: 4,
-    },
+      },
       1400: {
           items: props.items,
       }
@@ -71,13 +75,12 @@ export default function Productlist(props) {
               </div>
               <div className='row mt-2'>
                 <OwlCarousel className='owl-theme' {...options}>
-                  { 
-                    loading  ? <Loading />:
-                    product.map((data) =>
-                      <div class='item'>
-                       <Product title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
-                      </div>
-                  )
+                {  
+                      productslist.Product.map((data) =>
+                          <div class='item'>
+                            <Product title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
+                          </div>
+                      )                
                   }
                 </OwlCarousel>
               </div>

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams} from "react-router-dom";
 import Spinners from './Component/Loading';
+import {useDispatch } from 'react-redux'
 import Productlist2 from './Component/Productlist2'
 export default function Productdetails() {
   let { id } = useParams();
+  const [quantity] = useState(1);
     const [product, setproduct] = useState([])
     const [loading, setLoading] = useState(true)
+    const dispatch = useDispatch();
     const fetchData = () => {
       fetch(  
         `https://fakestoreapi.com/products/`+id,
@@ -35,28 +38,22 @@ export default function Productdetails() {
         <aside className="col-lg-6">
           <article className="gallery-wrap"> 
             <div className="img-big-wrap img-thumbnail">
-            
                <img src={product.image} style={{width: '80%', margin: '10%'}} />
-           
             </div> 
           </article> 
         </aside>
         <main className="col-lg-6 p-5" >
           <article className="ps-lg-3">
             <h2 className="title text-dark"> {product.title}</h2>
-
             <div className="rating-wrap my-3">
               <b className=" text-success"> {product.rating.rate}</b>
-           
               <span className="text-muted"> <i class="bi bi-star-fill"></i> {product.rating.count} </span>
-            
               <span className="text-success">In stock</span>
             </div>
-            <div className="mb-3 d-flex"> 
-              <h1>Rs. {product.price}</h1> <h3 className="text-muted"><del>{product.price*2} </del> </h3> 
+            <div className="mb-3 ml-5 d-flex"> 
+              <h1>Rs. {product.price}</h1> <h3 className="text-muted"><del>Rs. {product.price*2} </del> </h3> 
               <h2>50% OFF</h2>
             </div> 
-
 
             <dl className="row">
               <dt className="col-3">Type:</dt>
@@ -72,7 +69,7 @@ export default function Productdetails() {
           <div className='row'>
             <div className='col-6'> <button style={{width: '100%', height: '100%',backgroundColor: '#ff9f00', borderColor:'white'}} type="button" className="btn btn-primary btn-lg"> 
             <i className="bi bi-bag-fill" />
-             <span>ADD TO CART</span>
+             <span  onClick={() => dispatch({type: 'ADD_TO_CART', payload: {product, quantity} })}>ADD TO CART</span>
              </button></div> 
             <div className='col-6'> <button style={{width: '100%', height: '100%',backgroundColor: 'orangered', borderColor:'white'}} type="button" className="btn btn-primary  btn-lg" >
               <i className="bi bi-credit-card-2-back-fill" />

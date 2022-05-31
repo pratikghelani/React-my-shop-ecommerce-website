@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
+import { useSelector } from 'react-redux'
 export default function Nevbar() {
+  const CartData = useSelector(state => state.CartReducers)
   return (
     <>
       <nav className="d-none d-sm-none d-md-none d-lg-block d-xl-block bg-primary  p-3" >
@@ -39,7 +40,7 @@ export default function Nevbar() {
               <div className='pt-2' style={{ width: '10%' }}> <Link to='/' className='link-tag'><h5 className='text-white'> More</h5> </Link></div>
               <div className='pt-2' style={{ width: '25%' }}>
                 <Link to='/cart' className='link-tag d-flex'>
-                  <i class="bi bi-cart-check-fill"></i><sup className='cart-item' style={{ background: "red", borderRadius: "250px", padding: "5px" }}>5</sup>
+                  <i class="bi bi-cart-check-fill"></i><sup className='cart-item' style={{ background: "red", borderRadius: "250px", padding: "5px" }}>{CartData.totalQuantities}</sup>
                   <h5 className='text-white'> Cart </h5>
                 </Link>
               </div>

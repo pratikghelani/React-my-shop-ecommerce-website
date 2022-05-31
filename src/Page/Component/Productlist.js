@@ -5,28 +5,9 @@ import Loading from './Loading';
 import OwlCarousel from 'react-owl-carousel';
 import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
 import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
+import { useSelector } from 'react-redux'
 export default function Productlist(props) {
-  const [product, setproduct] = useState([]);
-  const [loading, setLoading] = useState(true)
-  const fetchData = () => {
-    fetch(
-      `https://fakestoreapi.com/products`,
-    )
-      .then((response) => {
-        return response.json()
-      })
-
-      .then((data) => {
-        setproduct(data)
-        setLoading(false);
-      })
-  }
-
-    useEffect(() => {
-      fetchData();
-     
-    }, [])
-
+  const productslist = useSelector(state => state.ProductReducers)
     const options = {
       margin: 30,
       responsiveClass: true,
@@ -69,14 +50,14 @@ export default function Productlist(props) {
                 </div>
               </div>
               <div className='row mt-2'>
-                <OwlCarousel className='owl-theme' {...options}>
-                  { 
-                    loading  ? <Loading />:
-                    product.map((data) =>
-                      <div class='item'>
-                       <Product title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
-                      </div>
-                  )}
+                <OwlCarousel className='owl-theme' {...options} >
+                  {  
+                      productslist.Product.map((data) =>
+                          <div class='item'>
+                            <Product title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
+                          </div>
+                      )                
+                  }
                 </OwlCarousel>
               </div>
             </div>
