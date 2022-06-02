@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 export default function Nevbar() {
-  const CartData = useSelector(state => state.CartReducers)
+  const productscount = useSelector((state) => state.Cart);
   return (
     <>
-      <nav className="d-none d-sm-none d-md-none d-lg-block d-xl-block bg-primary  p-3" >
+      <nav className="d-none d-sm-none d-md-none d-lg-block d-xl-block bg-primary fixed-top p-3" >
         <div class="container p5">
           <div class="d-flex">
             <div style={{ width: '10%' }}>
@@ -40,7 +40,7 @@ export default function Nevbar() {
               <div className='pt-2' style={{ width: '10%' }}> <Link to='/' className='link-tag'><h5 className='text-white'> More</h5> </Link></div>
               <div className='pt-2' style={{ width: '25%' }}>
                 <Link to='/cart' className='link-tag d-flex'>
-                  <i class="bi bi-cart-check-fill"></i><sup className='cart-item' style={{ background: "red", borderRadius: "250px", padding: "5px" }}>{CartData.totalQuantities}</sup>
+                  <i class="bi bi-cart-check-fill"></i><sup className='cart-item' style={{ background: "red", borderRadius: "25px", padding: "5px" }}>{productscount.length}</sup>
                   <h5 className='text-white'> Cart </h5>
                 </Link>
               </div>

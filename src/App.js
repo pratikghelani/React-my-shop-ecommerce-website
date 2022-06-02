@@ -5,7 +5,7 @@ import  Navbar from './Page/Component/Nevbar';
 import Footer from './Page/Component/Footer';
 import Cart from './Page/Cart';
 import { Routes,Route} from "react-router-dom";
-import store from './store/index'
+import { store } from './store/index'
 import { Provider } from 'react-redux'
 
 function App() {

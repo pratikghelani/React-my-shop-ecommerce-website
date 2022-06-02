@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams} from "react-router-dom";
 import Spinners from './Component/Loading';
-import {useDispatch } from 'react-redux'
 import Productlist2 from './Component/Productlist2'
 export default function Productdetails() {
   let { id } = useParams();
   const [quantity] = useState(1);
     const [product, setproduct] = useState([])
     const [loading, setLoading] = useState(true)
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const fetchData = () => {
       fetch(  
         `https://fakestoreapi.com/products/`+id,
@@ -46,7 +45,7 @@ export default function Productdetails() {
           <article className="ps-lg-3">
             <h2 className="title text-dark"> {product.title}</h2>
             <div className="rating-wrap my-3">
-              <b className=" text-success"> {product.rating.rate}</b>
+              <b className="text-success"> {product.rating.rate}</b>
               <span className="text-muted"> <i class="bi bi-star-fill"></i> {product.rating.count} </span>
               <span className="text-success">In stock</span>
             </div>
@@ -69,7 +68,8 @@ export default function Productdetails() {
           <div className='row'>
             <div className='col-6'> <button style={{width: '100%', height: '100%',backgroundColor: '#ff9f00', borderColor:'white'}} type="button" className="btn btn-primary btn-lg"> 
             <i className="bi bi-bag-fill" />
-             <span  onClick={() => dispatch({type: 'ADD_TO_CART', payload: {product, quantity} })}>ADD TO CART</span>
+             {/* <span  onClick={() => dispatch({type: 'ADD_TO_CART', payload: {product, quantity} })}>ADD TO CART</span> */}
+             <span>ADD TO CART</span>
              </button></div> 
             <div className='col-6'> <button style={{width: '100%', height: '100%',backgroundColor: 'orangered', borderColor:'white'}} type="button" className="btn btn-primary  btn-lg" >
               <i className="bi bi-credit-card-2-back-fill" />
@@ -99,7 +99,7 @@ export default function Productdetails() {
         </main> 
       </div>    
 
-          <Productlist2 title="Trending Offers" items="5"/>
+          <Productlist2 title="Trending Offers" items="5" />
       
     </div>
 

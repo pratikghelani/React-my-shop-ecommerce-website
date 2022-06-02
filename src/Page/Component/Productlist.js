@@ -5,9 +5,27 @@ import Loading from './Loading';
 import OwlCarousel from 'react-owl-carousel';
 import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
 import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
-import { useSelector } from 'react-redux'
+
 export default function Productlist(props) {
-  const productslist = useSelector(state => state.ProductReducers)
+  const [product, setproduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const fetchData = () => {
+    fetch(
+      `https://fakestoreapi.com/products`,
+    )
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        setproduct(data)
+        setLoading(false);
+        // console.log(data)
+      })
+  }
+    useEffect(() => {
+      fetchData();
+    }, [])
+
     const options = {
       margin: 30,
       responsiveClass: true,
@@ -16,7 +34,8 @@ export default function Productlist(props) {
       autoplay: true,
       loop: true,
       smartSpeed: 1000,
-      navText:["<div class='nav-btn prev-slide prev-btn'><svg width='14.6' height='27' viewBox='0 0 16 27' xmlns='http://www.w3.org/2000/svg' class='FXox6K'><path d='M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z' fill='#000' class='FXox6K'></path></svg></div>","<div class='next-btn nav-btn next-slide'><svg width='14.6' style='transform: rotate(180deg);' height='27' viewBox='0 0 16 27' xmlns='http://www.w3.org/2000/svg' class='_2-wzdc'><path d='M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z' fill='#000' class='FXox6K'></path></svg></div>"],      responsive: {
+      navText:["<div class='nav-btn prev-slide prev-btn'><svg width='14.6' height='27' viewBox='0 0 16 27' xmlns='http://www.w3.org/2000/svg' class='FXox6K'><path d='M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z' fill='#000' class='FXox6K'></path></svg></div>","<div class='next-btn nav-btn next-slide'><svg width='14.6' style='transform: rotate(180deg);' height='27' viewBox='0 0 16 27' xmlns='http://www.w3.org/2000/svg' class='_2-wzdc'><path d='M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z' fill='#000' class='FXox6K'></path></svg></div>"],
+      responsive: {
         0: {
           items: 1,
       },
@@ -36,8 +55,8 @@ export default function Productlist(props) {
         items: props.items,
       }
       },
+     
   };
-
     return (
       <>
         <div className='container-5 p-2' style={{backgroundColor: 'white'}}>
@@ -50,15 +69,19 @@ export default function Productlist(props) {
                 </div>
               </div>
               <div className='row mt-2'>
+ 
+
+             {   loading  ? <div className='mt-4'> <Loading /></div> :
                 <OwlCarousel className='owl-theme' {...options} >
-                  {  
-                      productslist.Product.map((data) =>
+                  {    
+                    product.map((data) =>
                           <div class='item'>
-                            <Product title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
+                            <Product data={data} title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
                           </div>
                       )                
                   }
                 </OwlCarousel>
+                }
               </div>
             </div>
             <div className='col-md-2 col-sm-12'>
