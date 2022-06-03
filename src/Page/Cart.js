@@ -1,21 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { add, remove } from '../store/Cartslice'
+import { remove } from '../store/Cartslice'
 export default function Cart() {
-
     const dispatch = useDispatch();
     const productslist = useSelector((state) => state.Cart);
-    console.log(productslist);
     const handleRemove = (productId) => {
         dispatch(remove(productId));
     };
   return (
     <>
+        { productslist.length ? <p>ok</p> : <p>oks</p> }
          <div className='container-10 mt-5 '>
-          <div className='row '> 
+         {productslist.length === 0
+        ?  
+        <div className='row '> 
+            <div className='col-md-12 col-sm-12 p-4' style={{backgroundColor:'white'}} > 
+            <div className='row p-3 text-center'> 
+                    <h4>Cart Is Empty</h4>
+            </div> 
+            </div> 
+        </div>        
+        : 
+            <div className='row '> 
                 <div className='col-md-8 col-sm-12 p-4' style={{backgroundColor:'white'}} > 
                     <div className='row p-3 border border-1'> 
-                        <div className='col-md-3 col-sm-12'><h4>My Cart ({productslist.length}) </h4></div> 
+                 <div className='col-md-3 col-sm-12'><h4>My Cart ({productslist.length}) </h4></div> 
                         <div className='col-md-8 col-sm-12'><h4>Deliver to:  SURAT - 395004 </h4></div> 
                         <div className='col-md-1 col-sm-12'><button type="button" class="btn btn-outline-primary">Change</button></div> 
                     </div> 
@@ -107,6 +116,7 @@ export default function Cart() {
 
             </div> 
           </div> 
+      }
         </div>  
     </>
   )
