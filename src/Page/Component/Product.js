@@ -2,14 +2,11 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import {useDispatch } from 'react-redux'
 import {add} from '../../store/Cartslice'
-
 export default function Product(props) {
     const dispatch = useDispatch();
-
     const handelAdd = (product)  => {
         dispatch(add(product));
     }
-
     return (
         <>
             <div className="card  mt-3 " style={{border: 'none'}}>
@@ -32,5 +29,3 @@ export default function Product(props) {
         </>
     )
 }
-
-

@@ -3,20 +3,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { remove } from '../store/Cartslice'
 export default function Cart() {
     const dispatch = useDispatch();
-    const productslist = useSelector((state) => state.Cart);
+    const productslist = useSelector((state) => state.Cartitem);
     const handleRemove = (productId) => {
         dispatch(remove(productId));
     };
   return (
     <>
-        { productslist.length ? <p>ok</p> : <p>oks</p> }
-         <div className='container-10 mt-5 '>
-         {productslist.length === 0
+        <div className='container-10 mt-5' >
+        {productslist.length === 0
         ?  
         <div className='row '> 
-            <div className='col-md-12 col-sm-12 p-4' style={{backgroundColor:'white'}} > 
-            <div className='row p-3 text-center'> 
-                    <h4>Cart Is Empty</h4>
+            <div className='col-md-12 col-sm-12 p-4' style={{"backgroundColor":"white","marginTop":"7%","marginBottom":"10%"}} > 
+            <div> <h4> Cart</h4> </div>
+            <div className='row p-3 text-center d-flex justify-content-center'> 
+            <img  src="/img/cart-icon.png" style={{"width":"25%"}} alt="Flipkart" title="Flipkart" />
+                <h4>Missing Cart items?</h4>
             </div> 
             </div> 
         </div>        

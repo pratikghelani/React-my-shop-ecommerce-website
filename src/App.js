@@ -4,6 +4,7 @@ import Productdetails from './Page/Productdetails';
 import  Navbar from './Page/Component/Nevbar';
 import Footer from './Page/Component/Footer';
 import Cart from './Page/Cart';
+import Login from './Page//Login';
 import { Routes,Route} from "react-router-dom";
 import { store } from './store/index'
 import { Provider } from 'react-redux'
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="product/:id" element={<Productdetails />} />
               <Route path="Cart" element={<Cart />} />
+              <Route path="Login" element={<Login />} />
         </Routes>
       <Footer />
     </Provider>

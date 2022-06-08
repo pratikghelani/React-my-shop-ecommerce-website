@@ -3,8 +3,8 @@ import Product from './Product'
 import React, { useState, useEffect } from 'react';
 import Loading from './Loading';
 import { useSelector, useDispatch } from 'react-redux';
-import OwlCarousel from 'react-owl-carousel';
 import { fetchProducts } from '../../store/Productslice';
+import OwlCarousel from 'react-owl-carousel';
 import { STATUSES } from '../../store/Productslice';
 import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
 import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
@@ -12,36 +12,11 @@ import '../../../node_modules/owl.carousel/dist/assets/owl.carousel.css';
 export default function Productlist(props) {
   const [product, setproduct] = useState([]);
   const [loading, setLoading] = useState(true);
-
-
   const dispatch = useDispatch();
-   
     const data = useSelector((state) => state.Product);
-    // const { data: products, status } = useSelector((state) => state.product);
-    // const [products, setProducts] = useState([]);
-
     useEffect(() => {
         dispatch(fetchProducts());
-   
       }, []);
-
-  const fetchData = () => {
-    fetch(
-      `https://fakestoreapi.com/products`,
-    )
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        setproduct(data)
-        setLoading(false);
-        // console.log(data)
-      })
-  }
-    useEffect(() => {
-      fetchData();
-    }, [])
-
     const options = {
       margin: 30,
       responsiveClass: true,
@@ -84,18 +59,15 @@ export default function Productlist(props) {
                 </div>
               </div>
               <div className='row mt-2'>
-
-             {/* {   loading  ? <div className='mt-4'> <Loading /></div> : */}
                 <OwlCarousel className='owl-theme' {...options} >
                   {    
                     data.data.map((data) =>
-                          <div class='item'>
-                            <Product data={data} title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
-                          </div>
-                      )                
+                      <div class='item'>
+                        <Product data={data} title={data.title} id={data.id} img={data.image} category={data.category} price={data.price}  rate={data.rating.rate} count={data.rating.count} />
+                      </div>
+                    )                
                   }
                 </OwlCarousel>
-                {/* } */}
               </div>
             </div>
             <div className='col-md-2 col-sm-12'>
