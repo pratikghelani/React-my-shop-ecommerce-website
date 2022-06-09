@@ -230,9 +230,7 @@ export default function Nevbar() {
                   <div>
                     <img style={{ position: "absolute", bottom: "10%" }} alt="login-icon" src="/img/login-icon.png" />
                   </div>
-                </div>
-
-                <div class="col-7 p-5">
+                </div>                <div class="col-7 p-5">
                   <form action="" onSubmit={regHandle}>
                     <div>
                       <div className='mb-5'>
