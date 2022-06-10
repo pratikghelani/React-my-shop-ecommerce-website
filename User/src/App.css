@@ -1,0 +1,244 @@
+@media all and (min-width: 992px) {
+  .navbar .dropdown-menu-end {
+    right: 0;
+    left: auto;
+  }
+
+  .navbar .nav-item .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    margin-top: 0;
+  }
+
+  .navbar .nav-item:hover .nav-link {
+    color: #fff;
+  }
+
+  .navbar .dropdown-menu.fade-down {
+    top: 80%;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+  }
+
+  .navbar .dropdown-menu.fade-up {
+    top: 180%;
+  }
+
+  .navbar .nav-item:hover .dropdown-menu {
+    transition: .3s;
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    transform: rotateX(0deg);
+  }
+}
+
+.bi-cart-check-fill::before {
+  color: white;
+}
+.search-btn,
+.search-bar {
+  border-radius: 0px;
+  background-color: white;
+  border-color: white;
+}
+
+.search-bar{
+  width: 60px;
+  height: 45px;
+}
+
+.login-btn {
+  padding: 8px 48px !important;
+}
+
+.moblie-search-btn {
+  background-color: #fff;
+}
+
+.offcanvas offcanvas-start {
+  width: 75%;
+}
+
+.login-dropdown {
+  width: 50% !important;
+}
+
+.container-5 {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.container-10 {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container-15 {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.prev-btn,
+.next-btn {
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  pointer-events: auto;
+  padding: 40px 15px;
+  box-shadow: 1px 2px 10px -1px rgb(0 0 0 / 30%) !important;
+  background-color: hsla(0, 0%, 100%, .98) !important;
+  cursor: pointer;
+  position: absolute !important;
+  top: 35% !important;
+}
+
+.prev-btn {
+  position: absolute !important;
+  margin-left: 0%;
+  z-index: 2 !important;
+}
+
+.next-btn {
+  position: absolute !important;
+  right: -2.1%;
+  margin-right: 43px;
+  z-index: 2 !important;
+}
+
+.cart-btn,
+.buy-btn {
+  border-radius: 0px;
+  width: 100%;
+  height: 154%;
+  color: white;
+}
+
+.link-tag {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.link-tag:hover {
+  text-decoration: none;
+  text-decoration: underline;
+  color: white;
+}
+
+.footer-list {
+  list-style: none;
+}
+
+#cart-item{
+  padding: 10px;
+}
+
+#place-order-btn{  
+  position: sticky;
+  top: 64px;
+  bottom: 0;
+  z-index: 2;
+  align-self: flex-start;
+ }
+
+ .place-order-btn{
+   background-color: orangered;
+   color: #fff;
+   border: none;
+   width: 30%;
+   padding-top: 1%;
+   padding-bottom: 1%;
+   /* height: 10%; */
+ }
+
+ .sebmenu{
+   background-color: #fff;
+   box-shadow: 0px 0px 5px;
+ }
+
+ .submenu-icon{
+  width: 50%;
+ }
+
+ .plue-btn,.minus-btn{
+   background-color: orangered;
+   border: none;
+ }
+
+ .count-btn{
+   border: none;
+   color: black;
+ }
+
+ .login-item{
+   padding-top: 5px;
+   padding-bottom: 5px;
+ }
+
+ .login-item:hover{
+   background-color: #ddd ;
+ }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 3;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+
+.cart-item{
+  position: relative;
+    background: red;
+
+    padding: 5px;
+    right: 18px;
+    height: 15px;
+    border: 1px solid white;
+    border-radius: 34px;
+    font-size: large;
+    padding: 6px;
+}
+
+.submenu-tag:hover{
+  color: blue;
+}
+
+.megasubmenu{ padding:1rem; }
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: var(--bs-dark);
+}
+.sidebar .nav-link:hover {
+  background: var(--bs-light);
+  color: var(--bs-primary);
+}
+
